@@ -4,15 +4,16 @@ function toChar(num){
 function toNum(char){
 	return char.charCodeAt(0) - 96
 }
-function encrypt (input) {
+function encrypt (input,inputKey) {
 	var size = input.length
 	var key = [];
 	// Making the key
-		for (i=0;i<size;i++){
-			var tempDig = Math.floor(Math.random()*26+1)
-			tempDig = toChar(tempDig);
-			key = key + tempDig
-		}
+	for (i=0;i<size;i++)
+		var tempDig = Math.floor(Math.random()*26+1);
+		tempDig = toChar(tempDig);
+		key = key + tempDig;
+	}
+	key=inputKey||key;
 	// End making the key
 
 
@@ -52,6 +53,8 @@ function encrypt (input) {
 			combo+=combined[i]
 		}
 	document.writeln("<p>Your input is "+input+", your output is "+combo+", and the key is "+key+"</p>")
+	
+	return combo;
 }
 
 function decrypt (output,key){
@@ -91,5 +94,7 @@ function decrypt (output,key){
 		for(i=0;i<size;i++){
 			message+=inputA[i]
 		}
-	document.writeln("<p>Your original message was "+message+"</p>")
+	document.writeln("<p>Your original message was "+message+"</p>");
+	
+	return  message;
 }
