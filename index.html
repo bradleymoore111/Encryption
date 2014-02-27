@@ -27,7 +27,7 @@
 		/*document.getElementById("clickEncrypt").onClick*/ cclickEncrypt = function () {
 			document.getElementById("diffMessage").innerText = document.getElementById("encryptMessage").value;
 			document.getElementById("diffCombo").innerText = encryptInput();
-			document.getElementById("diffKey").innerText = document.getElementById("encryptKey").value;
+			document.getElementById("diffKey").innerText = document.getElementById("encryptKey").value||key;
 		};
 		/*document.getElementById("clickDecrypt").onClick*/ cclickDecrypt = function(){
 			document.getElementById("diffMessage").innerText = decryptInput();
